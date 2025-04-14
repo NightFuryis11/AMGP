@@ -1,0 +1,8 @@
+cartopy
+pillow
+metpy
+numpy
+siphon
+pandas
+xarray
+matplotlib

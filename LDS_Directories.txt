@@ -1,2 +1,0 @@
-/home/sbailey4/Documents/AMGP/LocalData
-/scratch/sbailey4/LocalData
