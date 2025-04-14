@@ -23,13 +23,13 @@ If you installed AMGP without the packaged environment, the AMGP base folder con
 Alternatively - and most usefully for automated production of maps in an internal system - "start_amgp_noui_*" can be run with an argument following it containing *either* an absolute path to a preset.json file *or* a *.txt file where each line is an absolute path to a preset.json file. Both of these will cause AMGP to run in the background and close once it has produced the desired maps.
 
 ### Requirements
-AMGP has been tested on the following Python versions:\
-- Python 3.11.7 - AMGP v1.0.0\
-- Python 3.12.9 - Packaged with AMGP v1.0.0\
+AMGP has been tested on the following Python versions:
+- Python 3.11.7 - AMGP v1.0.0
+- Python 3.12.9 - Packaged with AMGP v1.0.0
 
 AMGP is *suspected* to work on Python 3.11+, but this has not been rigorously tested.
 
-Below are the package requirements to run all core and official modules and the AMGP version this requirement was introduced in. If any specific package version requirements are discovered, they will be added here as well.\
+Below are the package requirements to run all core and official modules and the AMGP version this requirement was introduced in. If any specific package version requirements are discovered, they will be added here as well.
 cartopy - AMGP v1.0.0\
 metpy - AMGP v1.0.0\
 numpy - AMGP v1.0.0\
@@ -39,7 +39,7 @@ siphon - AMGP v1.0.0\
 xarray - AMGP v1.0.0
 
 ## User Customization
-**More information, and full tutorials on how to create Styles and Modules, will be available soon, but for now only a brief description will have to suffice. Do note, they are fully implemented even if the description isn't here yet.**\
+**More information, and full tutorials on how to create Styles and Modules, will be available soon, but for now only a brief description will have to suffice. Do note, they are fully implemented even if the description isn't here yet.**
 AMGP has been designed since Beta v0.4.0 to be easily able to accomodate users creating their own custom Modules and Styles with which to create plots using their own data and with their own layouts. This comes in the form of two separate files that the user can alter: *Styles* and *Modules*.
 
 ### Styles
@@ -68,17 +68,17 @@ If you wish to define custom codes to produce specific plotted regions, create t
 
 ## License
 AMGP - The Automated Map Generation Program\
-Copyright (C) 2022-2025 Samuel Nelson Bailey\
+Copyright (C) 2022-2025 Samuel Nelson Bailey
 
 This program is free software: you can redistribute it and/or modify\
 it under the terms of the GNU General Public License as published by\
 the Free Software Foundation, either version 3 of the License, or\
-(at your option) any later version.\
+(at your option) any later version.
 
 This program is distributed in the hope that it will be useful,\
 but WITHOUT ANY WARRANTY; without even the implied warranty of\
 MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the\
-GNU General Public License for more details.\
+GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License\
 along with this program.  If not, see <https://www.gnu.org/licenses/>.
