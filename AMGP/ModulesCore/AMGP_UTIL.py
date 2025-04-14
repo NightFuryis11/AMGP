@@ -8,7 +8,7 @@
 #                  Core Module: AMGP_UTIL.py                  #
 #                     Author: Sam Bailey                      #
 #                 Last Revised: Apr 14, 2024                  #
-#                        Version: 1.0.0                       #
+#                        Version: 1.0.1                       #
 #                                                             #
 ###############################################################
 """
