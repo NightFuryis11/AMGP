@@ -24,8 +24,8 @@ Alternatively - and most usefully for automated production of maps in an interna
 
 ### Requirements
 AMGP has been tested on the following Python versions:\
-Python 3.11.7 - AMGP v1.0.0\
-Python 3.12.9 - Packaged with AMGP v1.0.0\
+- Python 3.11.7 - AMGP v1.0.0\
+- Python 3.12.9 - Packaged with AMGP v1.0.0\
 
 AMGP is *suspected* to work on Python 3.11+, but this has not been rigorously tested.
 
