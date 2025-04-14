@@ -8,19 +8,19 @@ The Automated Map Generation Program is a Python-core program with a tKinter UI 
 AMGP has two installation methods: direct source code download and source + environment download.
 
 ### Source and Environment (Recommended)
-Check the latest releases page and download the AMGP+ENV_v* release and place it wherever in your file structure you like. Run the "start_install_amgp_*" that corresponds to your operating system.\
+Check the latest releases page and download the "AMGP+ENV_v\*" release and place it wherever in your file structure you like. Run the "start_install_amgp_\*" that corresponds to your operating system.\
 This script, whether it's a batch file or a shell script for your system, will install the bare minimum environment required to run AMGP via miniconda3, using the requirements.txt distributed along with the rest of the install.\
 Running this script again will work to start AMGP on subsequent startups.
 
 ### Source Only
-Download the latest release of "AMGP_v*" from the releases page and place it wherever you like in your file structure. In order to launch AMGP, you must change the %PYTHON_EXE% variable within "start_amgp_*" and "start_amgp_noui_*" to the path of the Python executable within your local environment that has all the required packages listed below.\
+Download the latest release of "AMGP_v*" from the releases page and place it wherever you like in your file structure. In order to launch AMGP, you must change the %PYTHON_EXE% variable within "start_amgp_\*" and "start_amgp_noui_\*" to the path of the Python executable within your local environment that has all the required packages listed below.\
 Running either of scripts as seen below will then start AMGP as long as your environment supports it.
 
 ## Running AMGP
-If you installed the environment along with your AMGP install, you can simply run your copy of "start_install_amgp_*" again to run AMGP with no issues.\
-If you installed AMGP without the packaged environment, the AMGP base folder contains two scripts based on your operating system: "start_amgp_*" and "start_amgp_noui_*".\
-"start_amgp_*" is the full AMGP experience, while "start_amgp_noui_*" opens a command line where you can type the absolute file path to a preset.json file (those made naturally with AMGP are stored in AMGP/Presets/AMGP_MENU) to make maps without opening the AMGP UI.\
-Alternatively - and most usefully for automated production of maps in an internal system - "start_amgp_noui_*" can be run with an argument following it containing *either* an absolute path to a preset.json file *or* a *.txt file where each line is an absolute path to a preset.json file. Both of these will cause AMGP to run in the background and close once it has produced the desired maps.
+If you installed the environment along with your AMGP install, you can simply run your copy of "start_install_amgp_\*" again to run AMGP with no issues.\
+If you installed AMGP without the packaged environment, the AMGP base folder contains two scripts based on your operating system: "start_amgp_\*" and "start_amgp_noui_\*".\
+"start_amgp_\*" is the full AMGP experience, while "start_amgp_noui_\*" opens a command line where you can type the absolute file path to a preset.json file (those made naturally with AMGP are stored in AMGP/Presets/AMGP_MENU) to make maps without opening the AMGP UI.\
+Alternatively - and most usefully for automated production of maps in an internal system - "start_amgp_noui_\*" can be run with an argument following it containing *either* an absolute path to a preset.json file *or* a *.txt file where each line is an absolute path to a preset.json file. Both of these will cause AMGP to run in the background and close once it has produced the desired maps.
 
 ### Requirements
 AMGP has been tested on the following Python versions:
@@ -29,7 +29,7 @@ AMGP has been tested on the following Python versions:
 
 AMGP is *suspected* to work on Python 3.11+, but this has not been rigorously tested.
 
-Below are the package requirements to run all core and official modules and the AMGP version this requirement was introduced in. If any specific package version requirements are discovered, they will be added here as well.
+Below are the package requirements to run all core and official modules and the AMGP version this requirement was introduced in. If any specific package version requirements are discovered, they will be added here as well.\
 cartopy - AMGP v1.0.0\
 metpy - AMGP v1.0.0\
 numpy - AMGP v1.0.0\
@@ -63,8 +63,8 @@ If you wish to define custom codes to produce specific plotted regions, create t
 - Built-in skew-t Styles and data sources
 - Full GFS, NAM, RAP, and HRRR support for recent and archive data (potentially implimenting Herbie?), with the latter being a more difficult challenge to source.
 - Cross-sections of interpolated and model data based on a pair of lat-lon coordinates
-- A lot more that I've not even been able to put to words yet
 - Automatic updating via the install and run batch files
+- A lot more that I've not even been able to put to words yet
 
 ## License
 AMGP - The Automated Map Generation Program\
