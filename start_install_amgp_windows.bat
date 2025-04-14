@@ -1,4 +1,5 @@
 @echo off
+title AMGP Install-Update Script
 
 cd /D "%~dp0"
 
