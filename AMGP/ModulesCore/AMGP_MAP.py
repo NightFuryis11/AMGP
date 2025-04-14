@@ -175,6 +175,8 @@ def Run(packed_data : dict, plotables : list, map_settings : dict, proj_settings
         plot_time = amgp.Time(runtime, map_settings[axis_num]['time mode']['selection'][0], timestring = map_settings[axis_num]['time']['selection']).AddFormatting(plotables[axis_num]).Index(figure_num - 1).timelist[0]
 
         dr = os.path.dirname(os.path.realpath(__file__)).replace("ModulesCore", "Maps")
+        if not os.path.isdir(dr):
+            os.mkdir(dr)
         if save_loc == "":
             if fig_hasdate:
                 OldDirY = os.path.isdir(f'{dr}{amgp.PathSep()}{plot_time.year}')

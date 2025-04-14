@@ -82,14 +82,19 @@ def SearchDir(dir, cur_n=1, cur_LDF={}):
 
 def CustomAreas(code : str):
     dr = os.path.dirname(os.path.realpath(__file__)).replace("ModulesCore", "Resources")
-    with open(f"{dr}{PathSep()}amgp_area_definitions.json") as J:
+    with open(f"{dr}{PathSep()}amgp_area_definitions.json", "r") as J:
         file_data = json.load(J)
         if code in file_data.keys():
             area = file_data[code].replace(" ", "").split(",")
             unpacked = (float(area[0]), float(area[1]), float(area[2]), float(area[3]))
             return unpacked
         J.close()
-    with open(f"{dr}{PathSep()}user_area_definitions.json") as J:
+    
+    if not os.path.isfile(f"{dr}{PathSep()}user_area_definitions.json"):
+        with open(f"{dr}{PathSep()}user_area_definitions.json", "w+") as F:
+            json.dump({}, F)
+
+    with open(f"{dr}{PathSep()}user_area_definitions.json", "r") as J:
         file_data = json.load(J)
         if code in file_data.keys():
             area = file_data[code].replace(" ", "").split(",")
@@ -100,6 +105,10 @@ def CustomAreas(code : str):
 
 def SavePreset(preset_name, source_module_name, plotables, map_settings, projections, associated_style, save_location):
     dr = os.path.dirname(os.path.realpath(__file__)).replace("ModulesCore", "Presets")
+
+    if not os.path.isdir(dr):
+        os.mkdir(dr)
+
     data = {"version":amgpmenu.Version(), "type":source_module_name, "plotables":plotables, "projections":projections, "map_settings":map_settings, "style":associated_style, "save":save_location}
     if preset_name != "":
         if not os.path.isdir(f"{dr}{PathSep()}{source_module_name}"):
