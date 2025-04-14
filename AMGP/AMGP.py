@@ -8,11 +8,11 @@
 #                           AMGP.py                           #
 #                     Author: Sam Bailey                      #
 #                 Last Revised: Apr 14, 2025                  #
-#                        Version: 1.0.0                       #
+#                        Version: 1.0.1                       #
 #                                                             #
 ###############################################################
 #                                                             #
-version = "1.0.0" #       AMGP Version                        #
+version = "1.0.1" #       AMGP Version                        #
 #                                                             #
 ###############################################################
 #                                                             #
@@ -111,6 +111,8 @@ for module in os.listdir(f"{os.path.dirname(os.path.realpath(__file__))}{amgp.Pa
         #    combo_modules = dict(sorted(combo_modules.items()))
 
 # The same as above for the User Modules folder
+if not os.path.isdir(f"{os.path.dirname(os.path.realpath(__file__))}{amgp.PathSep()}ModulesUser"):
+    os.mkdir(f"{os.path.dirname(os.path.realpath(__file__))}{amgp.PathSep()}ModulesUser")
 for module in os.listdir(f"{os.path.dirname(os.path.realpath(__file__))}{amgp.PathSep()}ModulesUser"):
     if module.startswith("AMGP_") and module.replace(".py", "") not in module_names.values():
         strp = module.replace(".py", "")
