@@ -2,14 +2,14 @@
 #                                                             #
 #        The Automated Map Generation Program ( AMGP )        #
 #              © 2022-2025 Samuel Nelson Bailey               #
-#                                                             #
+
 #           Distributed under the GPL-3.0 License             #
 #                  Created on Mar 09, 2022                    #
 #                                                             #
 #                 Official Module: AMGP_OBS.py                #
 #                     Author: Sam Bailey                      #
 #                 Last Revised: Apr 14, 2025                  #
-#                        Version: 1.0.1                       #
+#                        Version: 1.0.0                       #
 #                                                             #
 ###############################################################
 
@@ -21,8 +21,6 @@ from metpy.units import units
 from metpy.io import add_station_lat_lon
 from metpy.io import metar
 import metpy.plots.wx_symbols as wxsym
-
-from datetime import timedelta
 
 import cartopy.crs as ccrs
 
@@ -179,13 +177,11 @@ def Data(plotable, time):
     if plotable["name"] == "surface_station_observations":
         if time.timelist[0].year < 2019:
             data = pd.read_csv(f'http://bergeron.valpo.edu/archive_surface_data/{time.timelist[0]:%Y}/{time.timelist[0]:%Y%m%d}_metar.csv', parse_dates=['date_time'], na_values=[-9999], low_memory=False)
-            data = data[(data["date_time"] <= (time.timelist[0] + timedelta(minutes = 5))) & (data["date_time"] >= (time.timelist[0] - timedelta(minutes = 5)))]
             data['wxsym'] = data.present_weather
         else:
             try:
                 data = StringIO(urlopen(f'http://bergeron.valpo.edu/current_surface_data/{time.timelist[0]:%Y%m%d%H}_sao.wmo').read().decode('utf-8', 'backslashreplace'))
-                data = metar.parse_metar_file(data, year=time.timelist[0].year, month=time.timelist[0].month).sel(date_time = time.timelist[0])
-                data = data[(data["date_time"] <= (time.timelist[0] + timedelta(minutes = 5))) & (data["date_time"] >= (time.timelist[0] - timedelta(minutes = 5)))]
+                data = metar.parse_metar_file(data, year=time.timelist[0].year, month=time.timelist[0].month)
             except:
                 data = pd.read_csv(f'http://mesonet.agron.iastate.edu/cgi-bin/request/asos.py?data=all&tz=Etc/UTC&format=comma&latlon=yes&year1={time.timelist[0].year}&month1={time.timelist[0].month}&day1={time.timelist[0].day}&hour1={time.timelist[0].hour}&minute1={time.timelist[0].minute}&year2={time.timelist[0].year}&month2={time.timelist[0].month}&day2={time.timelist[0].day}&hour2={time.timelist[0].hour}&minute2={time.timelist[0].minute}', skiprows=5, na_values=['M'], low_memory=False).replace('T', 0.00001).groupby('station').tail(1)
                 data = metar.parse_metar_file(StringIO('\n'.join(val for val in data.metar)), year=time.timelist[0].year, month=time.timelist[0].month)
