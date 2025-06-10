@@ -7,8 +7,8 @@
 #                                                             #
 #                  Core Module: AMGP_MENU.py                  #
 #                     Author: Sam Bailey                      #
-#                 Last Revised: Apr 14, 2025                  #
-#                        Version: 1.0.0                       #
+#                 Last Revised: Jun 10, 2025                  #
+#                        Version: 1.0.1                       #
 #                                                             #
 ###############################################################
 
@@ -942,9 +942,9 @@ def Start():
     WelcomeMessage = ttk.Label(window, text = f"Automated Map Generation Program (AMGP) version {version}, copyright (c) 2022-2025, Samuel Nelson Bailey")
     WelcomeMessage.grid(row=1, column = 0)
 
-    InfoMessage = ttk.Label(window, text = "For more information and guides on how to use and build your own modules, please visit https://github.com/sbailey04/AMGP, or click here!", foreground = "blue")
+    InfoMessage = ttk.Label(window, text = "For more information and guides on how to use and build your own modules, please visit https://github.com/NightFuryis11/AMGP, or click here!", foreground = "blue")
     InfoMessage.grid(row = 2, column = 0)
-    InfoMessage.bind("<Button-1>", lambda e: webbrowser.open_new_tab("https://github.com/sbailey04/AMGP"))
+    InfoMessage.bind("<Button-1>", lambda e: webbrowser.open_new_tab("https://github.com/NightFuryis11/AMGP"))
 
     global StatusBox
     StatusBox = ttk.Label(window, text = "", wraplength = 180, justify = tk.CENTER)

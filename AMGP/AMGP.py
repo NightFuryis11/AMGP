@@ -7,12 +7,12 @@
 #                                                             #
 #                           AMGP.py                           #
 #                     Author: Sam Bailey                      #
-#                 Last Revised: Apr 14, 2025                  #
-#                        Version: 1.0.1                       #
+#                 Last Revised: Jun 10, 2025                  #
+#                        Version: 1.0.2                       #
 #                                                             #
 ###############################################################
 #                                                             #
-version = "1.0.1" #       AMGP Version                        #
+version = "1.0.2" #       AMGP Version                        #
 #                                                             #
 ###############################################################
 #                                                             #
